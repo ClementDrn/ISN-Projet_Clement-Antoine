@@ -1,7 +1,9 @@
 # ISN-Projet
-<p>
-  Antoine BRUGGER<br/>
-  Clément DARNE
-</p>
+
+Antoine BRUGGER
+
+Clément DARNE
+
 ## Liens utiles
+
 http://tkinter.fdex.eu/
