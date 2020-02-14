@@ -1,3 +1,3 @@
 # ISN-Projet
-Antoine BRUGER<br/>
+Antoine BRUGGER<br/>
 Clément DARNE
