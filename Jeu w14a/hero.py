@@ -1,4 +1,4 @@
-import window
+import window               # On importe les sous fichiers dont on aura besoin
 import controls
 import stage
 import graphics
