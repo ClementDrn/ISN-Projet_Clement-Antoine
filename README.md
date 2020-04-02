@@ -10,6 +10,6 @@ https://html-color-codes.info/old/colorpicker.html
 
 1er carré | 2ème carré
 --------- | ----------
-Z         |     ↑
-Q         |     ←
-D         |     →
+    Z     |     ↑
+    Q     |     ←
+    D     |     →
