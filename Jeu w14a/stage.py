@@ -22,7 +22,7 @@ class Floor(Stage):                 # class qui définie le sol
         self.shape = get_can().create_rectangle(0, self.y, get_winW(), get_winH(), width=0, fill="#D0DCE0")
 
 
-class Ceiling(Stage):               # class qui définie le plfond de la fenêtre 
+class Ceiling(Stage):               # class qui définie le palfond de la fenêtre 
     def __init__(self, y):
         self.y = y
 
