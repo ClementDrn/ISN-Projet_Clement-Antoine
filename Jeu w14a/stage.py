@@ -1,4 +1,4 @@
-import window
+import window                           # le fichier stage.py définie les éléments d'un niveau
 from os import getcwd
 
 
@@ -14,7 +14,7 @@ class Stage:
         print("display Stage")
 
 
-class Floor(Stage):
+class Floor(Stage):                 # class qui définie le sol
     def __init__(self, y):
         self.y = y
 
@@ -22,7 +22,7 @@ class Floor(Stage):
         self.shape = get_can().create_rectangle(0, self.y, get_winW(), get_winH(), width=0, fill="#D0DCE0")
 
 
-class Ceiling(Stage):
+class Ceiling(Stage):               # class qui définie le plfond de la fenêtre 
     def __init__(self, y):
         self.y = y
 
@@ -30,7 +30,7 @@ class Ceiling(Stage):
         self.shape = get_can().create_rectangle(0, 0, get_winW(), self.y, width=0, fill="#D0DCE0")
 
 
-class WallLeft(Stage):
+class WallLeft(Stage):                # class qui definie le mur de gauche 
     def __init__(self, x):
         self.x = x
 
@@ -38,7 +38,7 @@ class WallLeft(Stage):
         self.shape = get_can().create_rectangle(0, 0, self.x, get_winH(), width=0, fill="#D0DCE0")
 
 
-class WallRight(Stage):
+class WallRight(Stage):                 # class qui definie le mur de droite 
     def __init__(self, x):
         self.x = x
 
