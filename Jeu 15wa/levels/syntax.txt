@@ -1,0 +1,10 @@
+Il faut suivre la syntaxe suivante pour chaque fichier level
+
+### Obligatoires
+floor y
+ceiling y
+wallLeft x
+wallRight x
+
+### Optionnels
+platform state x y sX sY dx dy
