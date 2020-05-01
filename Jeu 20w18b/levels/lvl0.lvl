@@ -1,0 +1,9 @@
+floor 450
+ceiling 100
+wallLeft 50
+wallRight 910
+platform semi-solid 300 300 100 10 1.5 0
+block solid 710 350 200 100
+block solid 510 200 200 50
+block semi-solid 50 300 100 20
+block semi-solid 180 300 100 20
