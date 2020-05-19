@@ -46,10 +46,11 @@ Après les personnages sont créés et mis à des coordonnées spécifiques (pro
 
 Ensuite, c'est au tour des éléments additionnels graphiques d'être créés (dans le module *graphics.py*). Il y a pour l'instant l'objet **hTransparency**, un rectangle (rouge pour l'instant) qui vient s'afficher quand les personnages se superposent.
 
-A ce moment les entrées possibles par les utilisateurs sont créés.
+A ce moment les entrées possibles par les utilisateurs sont créés dans *controls.py*.
 
-Finalement, les méthodes **move()** de **hero1** et **hero2** sont appelées. Elles permettent de calculer les prochaines coordonnées des personnages en prenant compte des commandes entrées par les joueurs et des interactions de l'environnement en jeu. Ces méthodes sont appelées de nouveau au bout de 10ms.
+Finalement, **la main_loop()** est appelée, avec dedans les méthodes **move()** de **hero1** et **hero2**. Elles permettent de calculer les prochaines coordonnées des personnages en prenant compte des commandes entrées par les joueurs et des interactions de l'environnement en jeu. La boucle principale est appelée de nouveau au bout de 10ms.
 
 ## Crédits
 
 Antoine Brugger et Clément Darne
+starfrosch ppour la musique: Deadfro5h Remix Kit(c) copyright 2019 Licensed under a Creative Commons Attribution (3.0) license. http://dig.ccmixter.org/files/starfrosch/60781 
