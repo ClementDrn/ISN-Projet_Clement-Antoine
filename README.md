@@ -53,4 +53,5 @@ Finalement, **la main_loop()** est appelée, avec dedans les méthodes **move()*
 ## Crédits
 
 Antoine Brugger et Clément Darne
-starfrosch ppour la musique: Deadfro5h Remix Kit(c) copyright 2019 Licensed under a Creative Commons Attribution (3.0) license. http://dig.ccmixter.org/files/starfrosch/60781 
+
+starfrosch pour la musique : Deadfro5h Remix Kit(c) copyright 2019 Licensed under a Creative Commons Attribution (3.0) license. http://dig.ccmixter.org/files/starfrosch/60781 
