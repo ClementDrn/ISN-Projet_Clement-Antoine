@@ -1,0 +1,19 @@
+!!! Il faut suivre la syntaxe et l'ordre suivants pour chaque fichier "level" !!!
+
+### Obligatoires  
+
+stage <height> <width>      /!\ "height" et "width" doivent être des multiple de 60 (pour les chunks)
+spawn 1 <x> <y>
+spawn 2 <x> <y>
+win <heroes:0|1|2> <x1> <y1> <x2> <y2>
+    (Un 2ème "win" est possible)
+
+floor <y>
+ceiling <y>
+wallLeft <x>
+wallRight <x>
+
+### Optionnels
+
+block <solid|semi-solid> <x> <y> <sX> <sY>
+platform <solid|semi-solid> <x> <y> <sX> <sY> <dx> <dy>

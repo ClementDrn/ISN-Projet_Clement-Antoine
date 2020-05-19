@@ -1,0 +1,19 @@
+stage 1000 600
+
+spawn 1 50 850
+spawn 2 500 850
+win 1 450 200 550 300
+win 2 50 100 150 200
+
+floor 900
+ceiling 100
+wallLeft 50
+wallRight 550
+
+block semi-solid 50 200 100 20
+block semi-solid 450 300 100 20
+platform semi-solid 250 800 100 10 1 0
+platform semi-solid 250 700 100 10 -1.5 0
+platform semi-solid 250 600 100 10 1.5 0
+platform semi-solid 250 500 100 10 -1 0
+platform semi-solid 225 400 50 10 2 0
