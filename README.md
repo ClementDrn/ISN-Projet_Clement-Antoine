@@ -4,7 +4,7 @@ Ce jeu a été codé par **Antoine Brugger** et **Clément Darne** en Pyton 3, a
 
 ## Comment Jouer
 
-Il suffit pour jouer d'exécuter le module *main.py*.
+Il suffit pour jouer, d'installer les modules pygame et PIL (ou Pillow), puis d'exécuter le module *main.py*. Il y a 7 niveaux.
 
 Voici les contrôles 
 
@@ -13,6 +13,8 @@ Contrôles | 1er carré | 2ème carré
 Saut      |     Z     |     ↑
 Gauche    |     Q     |     ←
 Droite    |     D     |     →
+
+ECHAP permet de quitter le niveau.
 
 #  Gameplay
 
@@ -23,7 +25,7 @@ Ce jeu est de type Platformer & Puzzle. Deux joueurs controlent deux carrés et 
 ### Arborescence
 
 ```
-Jeu
+Game
   └─controls.py
   └─debug.py        /!\ Ne sera pas dans le programme final.
   └─graphics.py
@@ -32,7 +34,13 @@ Jeu
   └─stage.py
   └─window.py
   └─levels
-      └─lvl0.lvl
+      └─lvl1.lvl
+      └─lvl2.lvl
+      └─...
+  └─sounds
+      └─...
+  └─textures
+      └─...
 ```
 
 
