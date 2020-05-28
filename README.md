@@ -1,10 +1,10 @@
-# Nom_du_Jeu
+# Projet d'ISN
 
 Ce jeu a été codé par **Antoine Brugger** et **Clément Darne** en Pyton 3, avec l'aide de la librairie Tkinter.
 
 ## Comment Jouer
 
-Il suffit pour jouer, d'installer les modules pygame et PIL (ou Pillow), puis d'exécuter le module *main.py*. Il y a 7 niveaux.
+Il suffit pour jouer, d'installer les modules pygame et PIL (ou Pillow) en exécutant "install_librairies.bat", puis d'exécuter le module *main.py* ou "run.bat". Il y a 8 niveaux.
 
 Voici les contrôles 
 
@@ -18,21 +18,23 @@ ECHAP permet de quitter le niveau.
 
 #  Gameplay
 
-Ce jeu est de type Platformer & Puzzle. Deux joueurs controlent deux carrés et doivent atteindre une arrivée, avec des conditions de victoires potentielles, dans chaque niveau. L'élément de Gameplay a exploité est la possibilité des deux joueurs a physiquement interragir entre eux.
+Ce jeu est de type Platformer & Puzzle. Deux joueurs controlent deux carrés et doivent atteindre une arrivée dans chaque niveau. L'élément de Gameplay a exploité est la possibilité des deux joueurs à physiquement interragir entre eux : se porter l'un l'autre.
 
 ## Programme
 
 ### Arborescence
 
 ```
+main.py
 Game
+  └─__init__.py
   └─controls.py
-  └─debug.py        /!\ Ne sera pas dans le programme final.
+  └─debug.py
   └─graphics.py
   └─hero.py
-  └─main.py
   └─stage.py
   └─window.py
+  └─music.py
   └─levels
       └─lvl1.lvl
       └─lvl2.lvl
