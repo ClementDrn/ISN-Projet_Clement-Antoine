@@ -1,4 +1,4 @@
-# Projet d'ISN
+# Projet d'ISN - Jeu de type platformer 2D
 
 Ce jeu a été codé par **Antoine Brugger** et **Clément Darne** en Python 3, avec l'aide de la librairie Tkinter.
 
