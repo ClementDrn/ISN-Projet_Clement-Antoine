@@ -1,0 +1,11 @@
+stage 540 960
+
+spawn 1 400 300
+spawn 2 510 300
+win 1 50 400 150 450
+win 2 810 400 910 450
+
+floor 450
+ceiling 150
+wallLeft 50
+wallRight 910

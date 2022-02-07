@@ -1,9 +1,0 @@
-stage 540 960
-floor 450
-ceiling 150
-wallLeft 50
-wallRight 910
-platform semi-solid 450 400 100 10 0 -1
-platform semi-solid 300 400 100 10 0 1
-platform semi-solid 600 400 100 10 0 1.5
-block semi-solid 50 400 50 50

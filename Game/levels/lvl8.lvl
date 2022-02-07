@@ -1,0 +1,64 @@
+stage 1000 1600
+text 600 800
+
+spawn 1 340 950
+spawn 2 410 950
+
+floor 950
+ceiling 50
+wallLeft 50
+wallRight 1550
+
+### 1 ###
+platform semi-solid 2 75 700 50 10 0 2 75 160 75 960
+
+block solid 0 150 250 100 400
+block semi-solid 0 150 650 100 300
+
+### 2 ###
+platform semi-solid 1 275 200 50 10 0 1.5 275 160 275 625
+
+block solid 0 350 50 100 325
+block semi-solid 0 350 375 100 125
+block solid 0 350 500 100 300
+
+### 3 ###
+platform semi-solid 2 475 400 50 10 0 -1.5 475 175 475 600
+
+block semi-solid 0 550 50 100 100
+block solid 0 550 150 100 475
+
+### 4 ###
+platform semi-solid 2 675 500 50 10 0 -1.2 675 175 675 625
+
+block solid 0 750 50 100 450
+# block semi-solid 1 750 500 100 100
+block solid 1 750 600 100 150
+block semi-solid 1 750 750 100 200
+
+### 5 ###
+platform semi-solid 1 875 300 50 10 0 1.5 875 200 875 600
+
+block solid 0 950 50 100 50
+block semi-solid 0 950 100 100 75
+block solid 0 950 175 100 775
+
+##### Zone d'arrivée #####
+
+block solid 0 1150 50 100 800
+platform semi-solid 2 1200 350 50 10 -0.5 0 1150 350 1300 350
+platform semi-solid 2 1175 450 50 10 -0.5 0 1150 450 1300 450
+platform semi-solid 2 1150 550 50 10 0.5 0 1150 550 1300 550
+block semi-solid 1 1250 650 50 10
+platform semi-solid 0 1175 750 50 10 0.5 0 1150 750 1300 750
+
+platform semi-solid 2 1325 350 50 10 0 1 1325 160 1325 380
+
+win 0 1450 50 1550 200
+block solid 0 1450 200 100 750
+block semi-solid 1 1400 400 50 10
+block semi-solid 1 1400 500 50 10
+platform semi-solid 0 1475 650 50 10 -0.5 0 1400 650 1550 650
+block solid 1 1400 850 50 10
+
+

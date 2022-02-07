@@ -1,0 +1,16 @@
+stage 640 960
+
+spawn 1 300 490
+spawn 2 350 490
+win 1 50 340 150 441
+win 2 50 150 150 240
+
+floor 540
+ceiling 150
+wallLeft 50
+wallRight 910
+
+block solid 0 50 440 100 100
+block solid 0 50 240 150 100
+block solid 0 760 340 200 200
+platform semi-solid 0 200 250 100 10 1 0

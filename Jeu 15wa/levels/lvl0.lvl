@@ -1,5 +1,0 @@
-floor 450
-ceiling 100
-wallLeft 50
-wallRight 910
-platform solid 300 300 100 10 1 0

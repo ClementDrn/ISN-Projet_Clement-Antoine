@@ -1,12 +1,25 @@
 # Projet d'ISN
 
-Ce jeu a été codé par **Antoine Brugger** et **Clément Darne** en Pyton 3, avec l'aide de la librairie Tkinter.
+Ce jeu a été codé par **Antoine Brugger** et **Clément Darne** en Python 3, avec l'aide de la librairie Tkinter.
+
+## Installation
+
+Tout d'abord il faut cloner le dépôt.
+
+```bash
+git clone https://github.com/ClementDrn/ISN-Projet_Clement-Antoine
+```
+
+Python 3 avec Tkinter est nécessaire pour exécuter le programme. Il peut être installé depuis le [site web officiel](https://www.python.org/downloads/).
+
+Enfin, il faut installer les modules `pygame` et `PIL` (ou Pillow) en exécutant `install_librairies.bat`.
+
 
 ## Comment Jouer
 
-Il suffit pour jouer, d'installer les modules pygame et PIL (ou Pillow) en exécutant "install_librairies.bat", puis d'exécuter le module *main.py* ou "run.bat". Il y a 8 niveaux.
+Pour lancer le jeu, il suffit d'exécuter le fichier `main.py`. Vous pourrez profiter de 8 niveaux.
 
-Voici les contrôles 
+### Les contrôles 
 
 Contrôles | 1er carré | 2ème carré
 --------- | --------- | ----------

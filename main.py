@@ -1,151 +1,95 @@
-﻿from tkinter import*
+''' Voici le module principal '''
+
+from Game import hero                     # On importe tous les modules nécessaires dans cette fenêtre
+from Game import stage
+from Game import debug
+from Game import music
+from Game import graphics
+from Game import window
+from Game import controls
+import time
 
 
+timeInWinArea = None
 
-class Stage:
-    '''def __init__(self):'''
-    def display(self):
-        print("display Stage")
+def get_can():
+    return window.root.canvas
 
+def get_win():
+    return window.root.window
 
+def main_loop():        # Boucle principale exécutée à chaque frame
+    t0 = time.time()
 
-class Floor(Stage):
-    def __init__(self, y):
-        self.y = y
+    global timeInWinArea
+    
+    if not debug.debugger.stop:
+        get_can().update()         # Mise à jour de l'affichage
 
-    def display(self):
-        canvas.create_rectangle(0, self.y, winW, winH, width=0, fill="#D0DCE0")
-
-
-
-class Hero:         # C'est la classe des carrés
-    def __init__(self, x, y, c, co):      # __init__ est exécuté à la création d'un objet (carré), "self" est obligatoire laisse tomber
-        self.x = x                       # x, y, s et c sont les attributs indiqués à la création des carrés (ligne 36)
-        self.y = y                       # ensuite on défini les variables du carré grâce aux attributs
-        self.size = 50
-        self.color = c
-        self.hero = canvas.create_rectangle(self.x, self.y,                                 # Création du carré graphiquement
-                                            self.x + self.size, self.y + self.size,         # L'origine du carré est sur le sommet en haut à droite
-                                            fill = self.color, width = 0)
-        self.ax, self.ay = 0, 0.07
-        self.vx, self.vy = 0, 0
-        self.controls = {"droite": co[0], "gauche": co[1], "saut": co[2]}
-        self.onFloor = True
-
-    def p_droite(self, event):
-        keys[self.controls["droite"]] = True
-        self.set_vx()
-
-    def p_gauche(self, event):
-        keys[self.controls["gauche"]] = True
-        self.set_vx()
-
-    def r_droite(self, event):
-        keys[self.controls["droite"]] = False
-        self.set_vx()
-
-    def r_gauche(self, event):
-        keys[self.controls["gauche"]] = False
-        self.set_vx()
-
-    def p_saut(self, event):
-        if keys[self.controls["saut"]] == False and self.onFloor == True: # Pour sauter une seule fois jusqu'à toucher le sol
-            keys[self.controls["saut"]] = True
-            self.vy = -3
-            self.onFloor = False
-            print("hop")
-
-    def r_saut(self, event):
-        keys[self.controls["saut"]] = False
-
-
-
-    def set_vx(self):           # Si les touches "droite" et "gauche" sont pressées, le héro ne doit pas bouger
-        if keys[self.controls["droite"]] == True:
-            vxSum = 1
+        for obj in stage.stage0.objs["Platform"]:
+            stage.stage0.objs["Platform"][obj].move()
+            
+        if hero.hero1.y < hero.hero2.y:         # Car le carré du dessous a plus d'influence sur le carré du dessus qu'inversement
+            hero.hero2.move()       
+            hero.hero1.move()
         else:
-            vxSum = 0
-        if keys[self.controls["gauche"]] == True:
-            vxSum -= 1
-        self.vx = vxSum
-        print(self.vx)
+            hero.hero1.move()       # Méthodes des deux personnages leur permettant de bouger
+            hero.hero2.move()
 
-    def set_vy(self):
-        if self.onFloor == False:
-            self.vy += self.ay          # On augmente la vitesse vers le bas grâce à l'accélération (gravité)
+        for col in stage.stage0.chunks:
+            for ch in col:
+                ch.calculate()
+        
+        count1 = 0
+        for key in stage.stage0.objs["Win"]:
+            count1 += 1
+            if stage.stage0.objs["Win"][key].test():
+                count1 -= 1
+        if count1 == 0:
+            timeInWinArea += 1
+            if timeInWinArea == 80:
+                debug.debugger.t0Win = stage.stage_end()
+        else:
+            timeInWinArea = 0
 
-
-    def move(self):
-        self.set_vy()
-        self.x += self.vx * 2
-        self.y += self.vy * 2
-        if self.y + self.size > floor1.y:
-            if self.onFloor == False:
-                self.onFloor = True
-                print("boom")
-            # try:
-            #     ratio = (self.y+self.size - canvas.coords(self.hero)[3]) / (floor1.y - canvas.coords(self.hero)[3])
-            #     self.x = (self.x-self.size - canvas.coords(self.hero)[0]) / ratio + canvas.coords(self.hero)[0]
-            # except:
-            #     print("error")
-            self.y = floor1.y - self.size
-        canvas.coords(self.hero, self.x, self.y,
-                                 self.x + self.size, self.y + self.size)
-        # canvas.move(self.hero, self.vx*2, self.vy*2)
-        canvas.update()         # Mise à jour de l'affichage
-        canvas.after(10, self.move)     # Recall de la fonction 10ms plus tard
+        graphics.set_graphics()
+        debug.debugger.fps_add()
+        
+    t1 = time.time()
+    if stage.hasWon and t1 - debug.debugger.t0Win > 3:
+        stage.hasWon = False
+        stage.change_level(stage.stage0.level+1)
+    afterTime = int((wantedTimeGap - t1 + t0) * 1000 + 0.4)         # +0.4 → int(x + 0.5) fait un arrondi, et -0.1 car il y a un petit temps mis pour faire les calculs du temps
+    get_can().after(afterTime, main_loop)     # Appelle de nouveau la fonction [afterTime] (en ms) plus tard
 
 
-
-
-
-
-
-
-# Variables de la fenêtre "window"
-winH = 540
-winW = 960
-bg = "white"
-
-# Création de la fenêtre et du canvas(pour faire des "dessins" de carrés et autres)
-window = Tk()
-canvas = Canvas(height=winH, width=winW, background=bg)
+# INITIALISATION du Tk et du Canvas (Tkinter)
+window.init()
 
 # Affichage du canvas
-canvas.pack()
+get_can().pack()
 
+debug.init(stage)
 
-# Dictionnaire de l'état des touches
-keys = {'d': False, 'q': False, 'z': False, "Left": False, "Right": False, "Up": False}
+try:
+    music.init()
+    music.play_music()
+except:
+    print("Error: No music available")
 
-floor1 = Floor(450)
+# Création des éléments principaux
+hero.init()       # Les personnages
+stage.init(hero.hero1, hero.hero2, 8)           # 8 est le nombre de niveaux
 
-hero1 = Hero(500, 400, "#007FD3", ["Right", "Left", "Up"]) # Création du carré bleu
-hero2 = Hero(200, 400, "#E69A00", ["d", "q", "z"]) # Création du carré orange
-# Les 2 carrés sont des objets indépendants de type (class) : Hero, donc ils ont les memes attributs (variables)
-# et les mêmes fonctions tout en marchant indépendament (en bougeant les coordonées de l'un, l'autre ne bouge pas)
+stage.change_level(1)         # Le niveau 1
 
+controls.init(get_can(), hero.hero1, hero.hero2)        # Les contrôles
 
+framerate = 80
+wantedTimeGap = 1 / framerate          # 1 seconde divisé par le nombre de fps voulu
 
-# Détection des touches
-canvas.bind_all('<Right>', hero1.p_droite)
-canvas.bind_all('<KeyRelease-Right>', hero1.r_droite)
-canvas.bind_all('<Left>', hero1.p_gauche)
-canvas.bind_all('<KeyRelease-Left>', hero1.r_gauche)
-canvas.bind_all('<Up>', hero1.p_saut)
-canvas.bind_all('<KeyRelease-Up>', hero1.r_saut)
+#───────────────────────────┐
+main_loop()                 # La boucle principale est appelée ↑↑↑
+#───────────────────────────┘
 
-canvas.bind_all('<d>', hero2.p_droite)
-canvas.bind_all('<KeyRelease-d>', hero2.r_droite)
-canvas.bind_all('<q>', hero2.p_gauche)
-canvas.bind_all('<KeyRelease-q>', hero2.r_gauche)
-canvas.bind_all('<z>', hero2.p_saut)
-canvas.bind_all('<KeyRelease-z>', hero2.r_saut)
-
-
-floor1.display()
-hero1.move()
-hero2.move()
-
-
-window.mainloop()
+get_win().mainloop()
