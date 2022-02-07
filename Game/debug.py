@@ -32,7 +32,7 @@ class Debug:
                 if words[0] == "help":
                     print("-----------------------------------------------")
                     # print("* func <function>\n    Pour appeller une fonction\n* var <name> <value> <int|float|str> [instance]\n    Pour changer la valeur d'une variable")
-                    print("* level <number>\n    Pour lancer un niveau\n* finish\n    Pour automatiquement finir le niveau")
+                    print("* level <number>\n    Pour lancer le niveau spécifié dans <number>\n* finish\n    Pour automatiquement finir le niveau")
                     print("-----------------------------------------------")
 
                 elif words[0] == "level":

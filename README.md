@@ -27,7 +27,16 @@ Saut      |     Z     |     ↑
 Gauche    |     Q     |     ←
 Droite    |     D     |     →
 
-ECHAP permet de quitter le niveau.
+`ECHAP` permet de quitter le niveau.
+
+### Les commandes de triche
+
+En appuyant sur `ENTER`, le jeu est mis en pause et il devient possible de rentrer une commande dans l'invité de commandes.
+
+Il existe plusieurs commandes :
+* `help` affiche la liste des commandes.
+* `finish` finit automatiquement le niveau.
+* `level <number>` lance le niveau spécifié dans `<number>`.
 
 #  Gameplay
 
